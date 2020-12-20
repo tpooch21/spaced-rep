@@ -16,6 +16,7 @@ const dummy = [
       ["12/14/20", false],
       ["12/16/20", true],
     ],
+    difficulty: "Easy",
   },
   {
     name: "Rotate Image",
@@ -23,6 +24,7 @@ const dummy = [
       ["12/18/20", false],
       ["12/20/20", true],
     ],
+    difficulty: "Medium",
   },
 ];
 
