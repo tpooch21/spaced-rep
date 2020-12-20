@@ -9,9 +9,9 @@ function App() {
   return (
     <Box minH="100vh" bg="gray.600" p={5}>
       <Toolbar />
-      <Box as="main" mt={16} p={5} borderWidth="1px" borderRadius="2px">
+      <main>
         <ProblemsContainer />
-      </Box>
+      </main>
     </Box>
   );
 }
