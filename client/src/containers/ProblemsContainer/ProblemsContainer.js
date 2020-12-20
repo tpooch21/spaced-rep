@@ -17,6 +17,7 @@ const dummy = [
       ["12/16/20", true],
     ],
     difficulty: "Easy",
+    url: "https://leetcode.com/problems/two-sum/",
   },
   {
     name: "Rotate Image",
@@ -25,6 +26,7 @@ const dummy = [
       ["12/20/20", true],
     ],
     difficulty: "Medium",
+    url: "https://leetcode.com/problems/rotate-image/",
   },
 ];
 

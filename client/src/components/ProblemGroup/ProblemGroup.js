@@ -5,11 +5,11 @@ import ProblemInfo from "./ProblemInfo";
 import { Flex, Box, Text } from "@chakra-ui/react";
 
 const ProblemGroup = ({ problem }) => {
-  const { name, dates, difficulty } = problem;
+  const { name, dates, difficulty, url } = problem;
 
   return (
     <Flex h={16} spacing={6} m={2} align="flex-start">
-      <ProblemInfo name={name} difficulty={difficulty} />
+      <ProblemInfo name={name} difficulty={difficulty} url={url} />
       {dates.map(([date, status]) => {
         return (
           <Box
