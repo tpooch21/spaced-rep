@@ -12,17 +12,17 @@ import { Box } from "@chakra-ui/react";
 const dummy = [
   {
     name: "Two Sum",
-    dates: {
-      "12/12/20": false,
-      "12/14/20": true,
-    },
+    dates: [
+      ["12/14/20", false],
+      ["12/16/20", true],
+    ],
   },
   {
     name: "Rotate Image",
-    dates: {
-      "12/16/20": false,
-      "12/18/20": true,
-    },
+    dates: [
+      ["12/18/20", false],
+      ["12/20/20", true],
+    ],
   },
 ];
 
