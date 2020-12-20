@@ -1,26 +1,18 @@
 // components
 import ProblemsContainer from "./containers/ProblemsContainer/ProblemsContainer";
+import Toolbar from "./components/Navigation/Toolbar";
 
 // Styling
 import { Box } from "@chakra-ui/react";
 
-import "./App.css";
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <Box
-        as="main"
-        m={5}
-        p={5}
-        bg="cyan.50"
-        borderWidth="1px"
-        borderRadius="2px"
-      >
+    <Box minH="100vh" bg="gray.600" p={5}>
+      <Toolbar />
+      <Box as="main" mt={16} p={5} borderWidth="1px" borderRadius="2px">
         <ProblemsContainer />
       </Box>
-    </div>
+    </Box>
   );
 }
 
