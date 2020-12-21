@@ -18,6 +18,7 @@ const dummy = [
     ],
     difficulty: "Easy",
     url: "https://leetcode.com/problems/two-sum/",
+    id: 1,
   },
   {
     name: "Rotate Image",
@@ -27,6 +28,7 @@ const dummy = [
     ],
     difficulty: "Medium",
     url: "https://leetcode.com/problems/rotate-image/",
+    id: 48,
   },
 ];
 
