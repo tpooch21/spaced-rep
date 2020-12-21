@@ -38,7 +38,7 @@ const DateItem = ({ date, status }) => (
       {icons[status]}
     </Box>
     <Spacer />
-    <Box flex="1" bg={dateColors[status]} w={28} borderRadius="sm"></Box>
+    <Box flex="2" bg={dateColors[status]} w={28} borderRadius="sm"></Box>
   </Flex>
 );
 

@@ -5,6 +5,7 @@
 
 // Components
 import ProblemGroup from "../../components/ProblemGroup/ProblemGroup";
+import AddProblem from "../../components/AddProblem/AddProblem";
 
 // Styling
 import { Box } from "@chakra-ui/react";
@@ -37,6 +38,7 @@ const ProblemsContainer = () => (
     {dummy.map((problem) => (
       <ProblemGroup problem={problem} />
     ))}
+    <AddProblem />
   </Box>
 );
 
