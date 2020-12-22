@@ -12,7 +12,7 @@ const ProblemGroup = ({ problem }) => {
     <Flex h={16} spacing={6} mb={5} align="flex-start">
       <ProblemInfo name={name} difficulty={difficulty} url={url} id={id} />
       {dates.map(([date, status]) => (
-        <DateItem date={date} status={status} />
+        <DateItem key={date} date={date} status={status} />
       ))}
     </Flex>
   );

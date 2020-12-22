@@ -36,7 +36,7 @@ const dummy = [
 const ProblemsContainer = () => (
   <Box mt={16} p={5} borderWidth="1px" borderRadius="2px">
     {dummy.map((problem) => (
-      <ProblemGroup problem={problem} />
+      <ProblemGroup key={problem.id} problem={problem} />
     ))}
     <AddProblem />
   </Box>

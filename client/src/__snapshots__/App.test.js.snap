@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="css-ebxwm6"
+>
+  <div
+    className="css-1nvxeg8"
+  >
+    <p
+      className="chakra-text css-t4wmb4"
+    >
+      Spaced Repetition
+    </p>
+  </div>
+  <main>
+    <div
+      className="css-1h420ko"
+    >
+      <div
+        className="css-1pfuh7p"
+        spacing={6}
+      >
+        <a
+          className="chakra-link css-0"
+          href="https://leetcode.com/problems/two-sum/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            className="css-1hj27zr"
+          >
+            <p
+              className="chakra-text css-ddzzof"
+            >
+              Two Sum
+               •
+               
+              <span
+                className="chakra-text css-c4yp34"
+              >
+                1
+              </span>
+            </p>
+            <span
+              className="chakra-badge css-ifsvay"
+            >
+              Easy
+            </span>
+          </div>
+        </a>
+        <div
+          className="css-m2w5si"
+        >
+          <div
+            align="flex-start"
+            className="css-q75b75"
+          >
+            <p
+              className="chakra-text css-1yziaqs"
+            >
+              12/14/20
+            </p>
+            <svg
+              className="chakra-icon css-1agfh98"
+              focusable={false}
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 0 0-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 0 0-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 0 0 .71-1.71L9.41 8z"
+                fill="currentColor"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-17xejub"
+          />
+          <div
+            className="css-1tohqhz"
+          />
+        </div>
+        <div
+          className="css-m2w5si"
+        >
+          <div
+            align="flex-start"
+            className="css-s5mm6w"
+          >
+            <p
+              className="chakra-text css-m4mm6y"
+            >
+              12/16/20
+            </p>
+            <svg
+              className="chakra-icon css-15vujqv"
+              focusable={false}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-17xejub"
+          />
+          <div
+            className="css-1p06i4k"
+          />
+        </div>
+      </div>
+      <div
+        className="css-1pfuh7p"
+        spacing={6}
+      >
+        <a
+          className="chakra-link css-0"
+          href="https://leetcode.com/problems/rotate-image/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            className="css-1hj27zr"
+          >
+            <p
+              className="chakra-text css-ddzzof"
+            >
+              Rotate Image
+               •
+               
+              <span
+                className="chakra-text css-c4yp34"
+              >
+                48
+              </span>
+            </p>
+            <span
+              className="chakra-badge css-ifsvay"
+            >
+              Medium
+            </span>
+          </div>
+        </a>
+        <div
+          className="css-m2w5si"
+        >
+          <div
+            align="flex-start"
+            className="css-q75b75"
+          >
+            <p
+              className="chakra-text css-1yziaqs"
+            >
+              12/18/20
+            </p>
+            <svg
+              className="chakra-icon css-1agfh98"
+              focusable={false}
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M9.41 8l2.29-2.29c.19-.18.3-.43.3-.71a1.003 1.003 0 0 0-1.71-.71L8 6.59l-2.29-2.3a1.003 1.003 0 0 0-1.42 1.42L6.59 8 4.3 10.29c-.19.18-.3.43-.3.71a1.003 1.003 0 0 0 1.71.71L8 9.41l2.29 2.29c.18.19.43.3.71.3a1.003 1.003 0 0 0 .71-1.71L9.41 8z"
+                fill="currentColor"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-17xejub"
+          />
+          <div
+            className="css-1tohqhz"
+          />
+        </div>
+        <div
+          className="css-m2w5si"
+        >
+          <div
+            align="flex-start"
+            className="css-s5mm6w"
+          >
+            <p
+              className="chakra-text css-m4mm6y"
+            >
+              12/20/20
+            </p>
+            <svg
+              className="chakra-icon css-15vujqv"
+              focusable={false}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-17xejub"
+          />
+          <div
+            className="css-1p06i4k"
+          />
+        </div>
+      </div>
+      <button
+        className="chakra-button css-9erg3n"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="chakra-button__icon css-9u48bm"
+        >
+          <svg
+            aria-hidden={true}
+            className="chakra-icon css-19ttkjj"
+            focusable={false}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        Add a New Problem
+      </button>
+      <div
+        className="chakra-collapse"
+        style={
+          Object {
+            "display": "none",
+            "height": "0px",
+            "opacity": 0,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <div
+          className="css-1xwh7yy"
+        />
+      </div>
+    </div>
+  </main>
+</div>
+`;

@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import App from "./App";
+import renderer from "react-test-renderer";
 
-test('renders learn react link', () => {
+// renders without crashing
+it("renders without crashing", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+});
+
+it("matches snapshot", () => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
