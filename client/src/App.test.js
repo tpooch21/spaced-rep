@@ -7,8 +7,3 @@ import renderer from "react-test-renderer";
 it("renders without crashing", () => {
   render(<App />);
 });
-
-it("matches snapshot", () => {
-  const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
