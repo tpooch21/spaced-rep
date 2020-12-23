@@ -2,7 +2,7 @@
 import AddProblemForm from "./AddProblemForm";
 
 // Styling
-import { useDisclosure, Button, Collapse, Box } from "@chakra-ui/react";
+import { useDisclosure, Button, Collapse } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 
 const AddProblem = () => {
@@ -21,7 +21,6 @@ const AddProblem = () => {
         _hover={{ bg: "gray.500", color: "green.200" }}
         leftIcon={
           <AddIcon
-            borderRadius="50%"
             border="1px"
             borderRadius="md"
             p={2}

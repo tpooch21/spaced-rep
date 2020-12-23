@@ -18,12 +18,14 @@ import { useForm } from "react-hook-form";
  * Number (optional)
  * Difficulty (optional)
  */
+const urlExp = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 
 const AddProblemForm = () => {
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
     const { problemName, problemURL, problemId, difficulty } = data;
     console.log(problemName, problemURL, problemId, difficulty);
+    reset();
   };
 
   return (
@@ -64,10 +66,13 @@ const AddProblemForm = () => {
             bg="gray.600"
             border="none"
             fontWeight="700"
-            ref={register({ required: true })}
+            ref={register({ required: true, pattern: urlExp })}
           />
           <FormErrorMessage fontSize="xs" mt={1}>
-            URL is required
+            {errors.problemURL &&
+              (errors.problemURL.type === "required"
+                ? "URL is required"
+                : "Not a valid URL")}
           </FormErrorMessage>
         </FormControl>
         <Flex mt={3} spacing={3} align="center" justify="space-between" w={72}>
