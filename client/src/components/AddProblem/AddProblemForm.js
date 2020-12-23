@@ -22,9 +22,8 @@ import { useForm } from "react-hook-form";
 const AddProblemForm = () => {
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = (data) => {
-    debugger;
-    const { problemName, problemURL } = data;
-    console.log(problemName, problemURL);
+    const { problemName, problemURL, problemId, difficulty } = data;
+    console.log(problemName, problemURL, problemId, difficulty);
   };
 
   return (
@@ -52,7 +51,9 @@ const AddProblemForm = () => {
             fontWeight="700"
             ref={register({ required: true })}
           />
-          <FormErrorMessage>Name is required</FormErrorMessage>
+          <FormErrorMessage fontSize="xs" mt={1}>
+            Name is required
+          </FormErrorMessage>
         </FormControl>
         <FormControl isInvalid={errors.problemURL}>
           <Input
@@ -65,30 +66,56 @@ const AddProblemForm = () => {
             fontWeight="700"
             ref={register({ required: true })}
           />
-          <FormErrorMessage>URL is required</FormErrorMessage>
+          <FormErrorMessage fontSize="xs" mt={1}>
+            URL is required
+          </FormErrorMessage>
         </FormControl>
         <Flex mt={3} spacing={3} align="center" justify="space-between" w={72}>
-          <Input
-            placeholder="ID"
-            size="sm"
-            bg="gray.600"
-            border="none"
-            width={14}
-            fontWeight="700"
-          />
-          <RadioGroup color="gray.600" fontWeight="500" fontSize="sm" pr={2}>
-            <Stack direction="row">
-              <Radio size="sm" value="easy" colorScheme="green">
-                Easy
-              </Radio>
-              <Radio size="sm" value="medium" colorScheme="yellow">
-                Medium
-              </Radio>
-              <Radio size="sm" value="hard" colorScheme="red">
-                Hard
-              </Radio>
-            </Stack>
-          </RadioGroup>
+          <FormControl>
+            <Input
+              name="problemId"
+              placeholder="ID"
+              size="sm"
+              bg="gray.600"
+              border="none"
+              width={14}
+              fontWeight="700"
+              ref={register}
+            />
+          </FormControl>
+          <FormControl>
+            <RadioGroup color="gray.600" fontWeight="500" fontSize="sm" pr={2}>
+              <Stack direction="row">
+                <Radio
+                  name="difficulty"
+                  size="sm"
+                  value="easy"
+                  colorScheme="green"
+                  ref={register}
+                >
+                  Easy
+                </Radio>
+                <Radio
+                  name="difficulty"
+                  size="sm"
+                  value="medium"
+                  colorScheme="yellow"
+                  ref={register}
+                >
+                  Medium
+                </Radio>
+                <Radio
+                  name="difficulty"
+                  size="sm"
+                  value="hard"
+                  colorScheme="red"
+                  ref={register}
+                >
+                  Hard
+                </Radio>
+              </Stack>
+            </RadioGroup>
+          </FormControl>
         </Flex>
         <Button
           type="submit"
