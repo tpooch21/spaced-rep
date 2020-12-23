@@ -1,3 +1,6 @@
+// Components
+import AddProblemForm from "./AddProblemForm";
+
 // Styling
 import { useDisclosure, Button, Collapse, Box } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
@@ -20,7 +23,7 @@ const AddProblem = () => {
           <AddIcon
             borderRadius="50%"
             border="1px"
-            borderRadius="50%"
+            borderRadius="md"
             p={2}
             w={8}
             h={8}
@@ -31,15 +34,7 @@ const AddProblem = () => {
         Add a New Problem
       </Button>
       <Collapse in={isOpen} animateOpacity>
-        {/* Throw form in here in place of box */}
-        <Box
-          p="40px"
-          color="white"
-          mt="4"
-          bg="teal.500"
-          rounded="sm"
-          shadow="md"
-        ></Box>
+        <AddProblemForm />
       </Collapse>
     </>
   );
