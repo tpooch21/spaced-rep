@@ -34,7 +34,7 @@ const dummy = [
 ];
 
 const ProblemsContainer = () => (
-  <Box mt={16} p={5} borderWidth="1px" borderRadius="2px">
+  <Box mt={16} p={5}>
     {dummy.map((problem) => (
       <ProblemGroup key={problem.id} problem={problem} />
     ))}
