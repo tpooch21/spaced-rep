@@ -5,7 +5,6 @@ import {
   RadioGroup,
   Stack,
   Flex,
-  Spacer,
   FormControl,
   FormErrorMessage,
   Button,
@@ -20,11 +19,11 @@ import { useForm } from "react-hook-form";
  */
 const urlExp = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 
-const AddProblemForm = () => {
+const AddProblemForm = ({ submitFormData }) => {
   const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
     const { problemName, problemURL, problemId, difficulty } = data;
-    console.log(problemName, problemURL, problemId, difficulty);
+    submitFormData();
     reset();
   };
 
@@ -33,11 +32,10 @@ const AddProblemForm = () => {
       <Flex
         w={80}
         p={4}
-        color="white"
         mt={4}
+        mb={3}
         bg="gray.300"
         rounded="sm"
-        shadow="md"
         fontFamily="main"
         color="green.200"
         direction="column"
@@ -49,12 +47,12 @@ const AddProblemForm = () => {
             placeholder="*Name"
             size="sm"
             bg="gray.600"
-            border="none"
             fontWeight="700"
-            ref={register({ required: true })}
+            ref={register({ required: "Name is required" })}
+            data-testid="name"
           />
-          <FormErrorMessage fontSize="xs" mt={1}>
-            Name is required
+          <FormErrorMessage fontSize="xs" mt={1} data-testid="name-msg">
+            {errors.problemName && errors.problemName.message}
           </FormErrorMessage>
         </FormControl>
         <FormControl isInvalid={errors.problemURL}>
@@ -66,13 +64,14 @@ const AddProblemForm = () => {
             bg="gray.600"
             border="none"
             fontWeight="700"
-            ref={register({ required: true, pattern: urlExp })}
+            ref={register({
+              required: "URL is required",
+              pattern: { value: urlExp, message: "URL is invalid" },
+            })}
+            data-testid="url"
           />
-          <FormErrorMessage fontSize="xs" mt={1}>
-            {errors.problemURL &&
-              (errors.problemURL.type === "required"
-                ? "URL is required"
-                : "Not a valid URL")}
+          <FormErrorMessage fontSize="xs" mt={1} data-testid="url-msg">
+            {errors.problemURL && errors.problemURL.message}
           </FormErrorMessage>
         </FormControl>
         <Flex mt={3} spacing={3} align="center" justify="space-between" w={72}>
@@ -133,6 +132,13 @@ const AddProblemForm = () => {
           Submit
         </Button>
       </Flex>
+      <Box
+        w={80}
+        h={7}
+        mt={0}
+        borderRadius="sm"
+        bg={errors.problemName || errors.problemURL ? "red.300" : "green.200"}
+      ></Box>
     </form>
   );
 };

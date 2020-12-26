@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`displays a form with no error messages on initial render 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="css-107yhbn"
+  >
+    <div
+      className="chakra-form-control css-1kxonj9"
+      role="group"
+    >
+      <input
+        aria-describedby="field-1-feedback"
+        className="chakra-input css-at91oz"
+        data-testid="name"
+        disabled={false}
+        id="field-1"
+        name="problemName"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="*Name"
+        readOnly={false}
+        required={false}
+      />
+    </div>
+    <div
+      className="chakra-form-control css-1kxonj9"
+      role="group"
+    >
+      <input
+        aria-describedby="field-2-feedback"
+        className="chakra-input css-quw5d"
+        data-testid="url"
+        disabled={false}
+        id="field-2"
+        name="problemURL"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="*URL"
+        readOnly={false}
+        required={false}
+      />
+    </div>
+    <div
+      className="css-11nn6z7"
+      spacing={3}
+    >
+      <div
+        className="chakra-form-control css-1kxonj9"
+        role="group"
+      >
+        <input
+          className="chakra-input css-1uxp5q"
+          disabled={false}
+          id="field-3"
+          name="problemId"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          placeholder="ID"
+          readOnly={false}
+          required={false}
+        />
+      </div>
+      <div
+        className="chakra-form-control css-1kxonj9"
+        role="group"
+      >
+        <div
+          className="chakra-radio-group css-wotfcf"
+          role="radiogroup"
+        >
+          <div
+            className="chakra-stack css-101iv94"
+          >
+            <label
+              className="chakra-radio css-78joka"
+            >
+              <input
+                checked={false}
+                className="chakra-radio__input"
+                disabled={false}
+                id="field-5"
+                name="difficulty"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                readOnly={false}
+                required={false}
+                style={
+                  Object {
+                    "border": "0px",
+                    "clip": "rect(0px, 0px, 0px, 0px)",
+                    "height": "1px",
+                    "margin": "-1px",
+                    "overflow": "hidden",
+                    "padding": "0px",
+                    "position": "absolute",
+                    "whiteSpace": "nowrap",
+                    "width": "1px",
+                  }
+                }
+                type="radio"
+                value="easy"
+              />
+              <div
+                aria-hidden={true}
+                className="chakra-radio__control css-ssalds"
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+              />
+              <div
+                className="chakra-radio__label css-1bpjuuo"
+                onMouseDown={[Function]}
+                onTouchStart={[Function]}
+              >
+                Easy
+              </div>
+            </label>
+            <label
+              className="chakra-radio css-78joka"
+            >
+              <input
+                checked={false}
+                className="chakra-radio__input"
+                disabled={false}
+                id="field-5"
+                name="difficulty"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                readOnly={false}
+                required={false}
+                style={
+                  Object {
+                    "border": "0px",
+                    "clip": "rect(0px, 0px, 0px, 0px)",
+                    "height": "1px",
+                    "margin": "-1px",
+                    "overflow": "hidden",
+                    "padding": "0px",
+                    "position": "absolute",
+                    "whiteSpace": "nowrap",
+                    "width": "1px",
+                  }
+                }
+                type="radio"
+                value="medium"
+              />
+              <div
+                aria-hidden={true}
+                className="chakra-radio__control css-ssalds"
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+              />
+              <div
+                className="chakra-radio__label css-1bpjuuo"
+                onMouseDown={[Function]}
+                onTouchStart={[Function]}
+              >
+                Medium
+              </div>
+            </label>
+            <label
+              className="chakra-radio css-78joka"
+            >
+              <input
+                checked={false}
+                className="chakra-radio__input"
+                disabled={false}
+                id="field-5"
+                name="difficulty"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                readOnly={false}
+                required={false}
+                style={
+                  Object {
+                    "border": "0px",
+                    "clip": "rect(0px, 0px, 0px, 0px)",
+                    "height": "1px",
+                    "margin": "-1px",
+                    "overflow": "hidden",
+                    "padding": "0px",
+                    "position": "absolute",
+                    "whiteSpace": "nowrap",
+                    "width": "1px",
+                  }
+                }
+                type="radio"
+                value="hard"
+              />
+              <div
+                aria-hidden={true}
+                className="chakra-radio__control css-ssalds"
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+              />
+              <div
+                className="chakra-radio__label css-1bpjuuo"
+                onMouseDown={[Function]}
+                onTouchStart={[Function]}
+              >
+                Hard
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      className="chakra-button css-1lf5o8h"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+  <div
+    className="css-1eren5u"
+  />
+</form>
+`;
