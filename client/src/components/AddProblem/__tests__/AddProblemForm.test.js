@@ -48,6 +48,45 @@ it("displays correct error message when url is invalid", async () => {
   });
 
   expect(getByTestId("url-msg").innerHTML).toEqual("URL is invalid");
+
+  await act(async () => {
+    fireEvent.change(getByTestId("url"), {
+      target: {
+        value: "Panda",
+      },
+    });
+    fireEvent.submit(getByRole("button"));
+  });
+
+  expect(getByTestId("url-msg").innerHTML).toEqual("URL is invalid");
 });
 
-// "does not submit data to backend when there are any errors"
+it("does not display an error message when name is entered", async () => {
+  const { queryByTestId, getByTestId, getByRole } = render(<AddProblemForm />);
+
+  await act(async () => {
+    fireEvent.change(getByTestId("name"), {
+      target: {
+        value: "Two Sum",
+      },
+    });
+    fireEvent.submit(getByRole("button"));
+  });
+
+  expect(queryByTestId("name-msg")).toBeNull();
+});
+
+it("does not display an invalid URL error message for a valid URL", async () => {
+  const { queryByTestId, getByTestId, getByRole } = render(<AddProblemForm />);
+
+  await act(async () => {
+    fireEvent.change(getByTestId("url"), {
+      target: {
+        value: "www.google.com",
+      },
+    });
+    fireEvent.submit(getByRole("button"));
+  });
+
+  expect(queryByTestId("url-msg")).toBeNull();
+});

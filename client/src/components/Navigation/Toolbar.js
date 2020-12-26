@@ -1,4 +1,4 @@
-import { Flex, Spacer, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 const Toolbar = () => (
   <Flex

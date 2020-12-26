@@ -19,11 +19,11 @@ import { useForm } from "react-hook-form";
  */
 const urlExp = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 
-const AddProblemForm = ({ submitFormData }) => {
+const AddProblemForm = () => {
   const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
     const { problemName, problemURL, problemId, difficulty } = data;
-    submitFormData();
+    console.log(problemName, problemURL, problemId, difficulty);
     reset();
   };
 
