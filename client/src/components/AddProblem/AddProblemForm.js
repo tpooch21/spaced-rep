@@ -10,7 +10,10 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+// Misc
 import { useForm } from "react-hook-form";
+import axios from "axios";
+
 /**
  * Name
  * URL
@@ -18,12 +21,27 @@ import { useForm } from "react-hook-form";
  * Difficulty (optional)
  */
 const urlExp = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+const url = "http://localhost:3001";
 
-const AddProblemForm = () => {
+const AddProblemForm = ({ add }) => {
   const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
     const { problemName, problemURL, problemId, difficulty } = data;
     console.log(problemName, problemURL, problemId, difficulty);
+
+    axios
+      .post(url, {
+        name: problemName,
+        url: problemURL,
+        id: problemId,
+        difficulty: difficulty,
+      })
+      .then((res) => {
+        console.log(res.data);
+        add(res.data);
+      })
+      .catch((err) => console.error(err));
+
     reset();
   };
 
@@ -93,7 +111,7 @@ const AddProblemForm = () => {
                 <Radio
                   name="difficulty"
                   size="sm"
-                  value="easy"
+                  value="Easy"
                   colorScheme="green"
                   ref={register}
                 >
@@ -102,7 +120,7 @@ const AddProblemForm = () => {
                 <Radio
                   name="difficulty"
                   size="sm"
-                  value="medium"
+                  value="Medium"
                   colorScheme="yellow"
                   ref={register}
                 >
@@ -111,7 +129,7 @@ const AddProblemForm = () => {
                 <Radio
                   name="difficulty"
                   size="sm"
-                  value="hard"
+                  value="Hard"
                   colorScheme="red"
                   ref={register}
                 >

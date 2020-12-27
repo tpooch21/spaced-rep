@@ -5,7 +5,7 @@ import AddProblemForm from "./AddProblemForm";
 import { useDisclosure, Button, Collapse } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 
-const AddProblem = () => {
+const AddProblem = ({ add }) => {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <>
@@ -33,7 +33,7 @@ const AddProblem = () => {
         Add a New Problem
       </Button>
       <Collapse in={isOpen} animateOpacity>
-        <AddProblemForm />
+        <AddProblemForm add={add} />
       </Collapse>
     </>
   );
