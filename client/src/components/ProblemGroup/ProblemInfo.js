@@ -8,14 +8,14 @@ const difficultyColors = {
 
 const ProblemInfo = ({ name, difficulty, url, id }) => (
   <Link href={url} isExternal>
-    <Box w={48} h={16} p={2} borderRadius="sm" bg="gray.300">
-      <Text fontFamily="main" fontWeight="bold">
-        {name} &bull;{" "}
-        <Text color="gray.700" as="span" fontSize="sm" fontWeight="normal">
-          {id}
-        </Text>
+    <Box w={56} h={16} p={2} borderRadius="sm" bg="gray.300">
+      <Text fontFamily="main" fontWeight="bold" isTruncated>
+        {name}
       </Text>
-      <Badge colorScheme={`${difficultyColors[difficulty]}`}>
+      <Text color="gray.700" as="span" fontSize="sm" fontWeight="normal">
+        {id} &bull;
+      </Text>
+      <Badge ml={2} colorScheme={`${difficultyColors[difficulty]}`}>
         {difficulty}
       </Badge>
     </Box>
