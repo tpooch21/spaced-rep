@@ -17,6 +17,7 @@
     "react-hook-form": "^6.13.1",
     "react-scripts": "4.0.1",
     "react-test-renderer": "^17.0.1",
+    "valid-url": "^1.0.9",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
