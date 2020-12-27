@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+const dateFormat = require("dateformat");
 dotenv.config();
 
+app.use(bodyParser.json());
 app.use(cors());
 const port = process.env.PORT;
 
@@ -37,4 +40,18 @@ app.listen(port, () => {
 // Set up get route, which returns an array of problem objects
 app.get("/", (req, res) => {
   res.send(problems).status(200);
+});
+
+app.post("/", (req, res) => {
+  const body = req.body;
+  const dateAdded = dateFormat(new Date(), "shortDate");
+
+  const newProblem = {
+    ...body,
+    dates: [[dateAdded, false]],
+  };
+
+  console.log(newProblem);
+  problems.push(newProblem);
+  res.send(problems).status(201);
 });
