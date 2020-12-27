@@ -49,10 +49,11 @@ it("displays correct error message when url is invalid", async () => {
 
   expect(getByTestId("url-msg").innerHTML).toEqual("URL is invalid");
 
+  // url must contain http or https
   await act(async () => {
     fireEvent.change(getByTestId("url"), {
       target: {
-        value: "Panda",
+        value: "www.google.com",
       },
     });
     fireEvent.submit(getByRole("button"));
@@ -82,7 +83,7 @@ it("does not display an invalid URL error message for a valid URL", async () => 
   await act(async () => {
     fireEvent.change(getByTestId("url"), {
       target: {
-        value: "www.google.com",
+        value: "https://www.google.com",
       },
     });
     fireEvent.submit(getByRole("button"));

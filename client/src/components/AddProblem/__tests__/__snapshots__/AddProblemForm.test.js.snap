@@ -104,7 +104,7 @@ exports[`displays a form with no error messages on initial render 1`] = `
                   }
                 }
                 type="radio"
-                value="easy"
+                value="Easy"
               />
               <div
                 aria-hidden={true}
@@ -152,7 +152,7 @@ exports[`displays a form with no error messages on initial render 1`] = `
                   }
                 }
                 type="radio"
-                value="medium"
+                value="Medium"
               />
               <div
                 aria-hidden={true}
@@ -200,7 +200,7 @@ exports[`displays a form with no error messages on initial render 1`] = `
                   }
                 }
                 type="radio"
-                value="hard"
+                value="Hard"
               />
               <div
                 aria-hidden={true}

@@ -13,6 +13,7 @@ import {
 // Misc
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { isHttpUri, isHttpsUri } from "valid-url";
 
 /**
  * Name
@@ -20,14 +21,12 @@ import axios from "axios";
  * Number (optional)
  * Difficulty (optional)
  */
-const urlExp = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
 const url = "http://localhost:3001";
 
 const AddProblemForm = ({ add }) => {
   const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
     const { problemName, problemURL, problemId, difficulty } = data;
-    console.log(problemName, problemURL, problemId, difficulty);
 
     axios
       .post(url, {
@@ -43,6 +42,13 @@ const AddProblemForm = ({ add }) => {
       .catch((err) => console.error(err));
 
     reset();
+  };
+
+  const validateURL = (value) => {
+    if (isHttpsUri(value) || isHttpUri(value)) {
+      return true;
+    }
+    return "URL is invalid";
   };
 
   return (
@@ -84,7 +90,7 @@ const AddProblemForm = ({ add }) => {
             fontWeight="700"
             ref={register({
               required: "URL is required",
-              pattern: { value: urlExp, message: "URL is invalid" },
+              validate: validateURL,
             })}
             data-testid="url"
           />
