@@ -25,13 +25,17 @@ const ProblemsContainer = () => {
     axios.get(url).then((res) => setProblems(res.data));
   }, []);
 
+  const handleProblemSubmit = (data) => {
+    setProblems(data);
+  };
+
   console.log(problems);
   return (
     <Box mt={16} p={5}>
       {problems.map((problem) => (
         <ProblemGroup key={problem.id} problem={problem} />
       ))}
-      <AddProblem />
+      <AddProblem add={handleProblemSubmit} />
     </Box>
   );
 };
