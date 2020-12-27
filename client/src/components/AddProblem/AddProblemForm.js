@@ -8,6 +8,7 @@ import {
   FormControl,
   FormErrorMessage,
   Button,
+  useToast,
 } from "@chakra-ui/react";
 
 // Misc
@@ -24,6 +25,7 @@ import { isHttpUri, isHttpsUri } from "valid-url";
 const url = "http://localhost:3001";
 
 const AddProblemForm = ({ add }) => {
+  const toast = useToast();
   const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
     const { problemName, problemURL, problemId, difficulty } = data;
@@ -38,6 +40,14 @@ const AddProblemForm = ({ add }) => {
       .then((res) => {
         console.log(res.data);
         add(res.data);
+        toast({
+          title: "Success",
+          description: "Problem added successfully",
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+          bg: "green.200",
+        });
       })
       .catch((err) => console.error(err));
 
