@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const dateFormat = require("dateformat");
+const schema = require("./schema/schema");
 dotenv.config();
 const port = process.env.PORT;
 
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(
   "/graphql",
   graphqlHTTP({
-    schema,
+    schema: schema,
     graphiql: true,
   })
 );
