@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      date: {
-        type: Sequelize.DATEONLY,
-      },
       dateFormatted: {
         type: Sequelize.STRING,
       },
@@ -19,7 +16,7 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       updatedAt: {
         allowNull: false,

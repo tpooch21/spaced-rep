@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Date.init(
     {
-      date: DataTypes.DATEONLY,
       dateFormatted: DataTypes.STRING,
       solved: DataTypes.BOOLEAN,
     },
