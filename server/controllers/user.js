@@ -26,8 +26,6 @@ const retrieveUser = (id) => {
     .catch((err) => console.error(err));
 };
 
-createUser();
-
 module.exports = {
   createUser,
   retrieveUser,

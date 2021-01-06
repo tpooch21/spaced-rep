@@ -12,8 +12,6 @@ const createAttemptDate = () => {
     .catch((err) => console.error(err));
 };
 
-createAttemptDate();
-
 module.exports = {
   createAttemptDate,
 };
