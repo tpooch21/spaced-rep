@@ -6,10 +6,9 @@
 const User = require("../models").User;
 
 const createUser = (req, res) => {
-  const { firstName, lastName } = req.body;
   return User.create({
-    firstName,
-    lastName,
+    firstName: "Trevor",
+    lastName: "Puccini",
   })
     .then((res) => console.log(res))
     .catch((err) => console.error(err));
@@ -26,6 +25,8 @@ const retrieveUser = (id) => {
     .then((res) => res)
     .catch((err) => console.error(err));
 };
+
+createUser();
 
 module.exports = {
   createUser,

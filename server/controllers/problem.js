@@ -23,6 +23,8 @@ const retrieveProblems = (userId) => {
     .catch((err) => console.error(err));
 };
 
+createProblem();
+
 module.exports = {
   createProblem,
   retrieveProblems,
