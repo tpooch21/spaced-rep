@@ -19,7 +19,7 @@ const retrieveProblems = (userId) => {
     },
     raw: true,
   })
-    .then((res) => console.log(res))
+    .then((res) => res)
     .catch((err) => console.error(err));
 };
 
