@@ -11,7 +11,9 @@ const { DateResolver } = require("graphql-scalars");
 
 const resolvers = {
   Query: {
-    user: (id) => retrieveUser(id),
+    user(parent, args) {
+      return retrieveUser(args.id);
+    },
   },
   User: {
     problems(parent) {

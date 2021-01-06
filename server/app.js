@@ -4,6 +4,7 @@ const cors = require("cors");
 const { typeDefs } = require("./gql/typeDefs");
 const { resolvers } = require("./gql/resolvers");
 const { ApolloServer } = require("apollo-server-express");
+dotenv.config();
 const port = process.env.PORT;
 
 const server = new ApolloServer({ typeDefs, resolvers });
