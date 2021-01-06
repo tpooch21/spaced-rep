@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "userId",
         onDelete: "CASCADE",
       });
-      Problem.hasMany(models.Date);
+      Problem.hasMany(models.AttemptDate);
     }
   }
   Problem.init(
