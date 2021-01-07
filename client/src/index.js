@@ -7,13 +7,19 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import myTheme from "./customTheme/themeExtension";
 
+// apollo
+import { ApolloProvider } from "@apollo/client";
+import apolloCli from "./apolloConfig";
+
 const theme = extendTheme(myTheme);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
+    <ApolloProvider client={apolloCli}>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

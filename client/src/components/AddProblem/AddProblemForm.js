@@ -22,7 +22,7 @@ import { isHttpUri, isHttpsUri } from "valid-url";
  * Number (optional)
  * Difficulty (optional)
  */
-const url = "http://localhost:3001";
+const url = "http://localhost:3001/problems";
 
 const AddProblemForm = ({ add }) => {
   const toast = useToast();
