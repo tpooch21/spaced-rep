@@ -20,6 +20,15 @@ const resolvers = {
     addUser(parent, args) {
       return createUser(args.firstName, args.lastName);
     },
+    addProblem(parent, args) {
+      return createProblem(
+        args.name,
+        args.url,
+        args.difficulty,
+        args.leetcodeId,
+        args.userId
+      );
+    },
   },
   User: {
     problems(parent, args) {
