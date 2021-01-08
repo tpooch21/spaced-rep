@@ -10,7 +10,7 @@ const createUser = (firstName, lastName) => {
     firstName,
     lastName,
   })
-    .then((res) => console.log(res))
+    .then((res) => res)
     .catch((err) => console.error(err));
 };
 

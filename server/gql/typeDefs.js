@@ -31,6 +31,18 @@ const typeDefs = gql`
   type Query {
     user(id: ID): User
   }
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String): User
+    addProblem(
+      name: String!
+      url: String!
+      difficulty: String
+      leetcodeId: ID
+      userId: ID!
+    ): Problem
+    addAttemptDate(problemId: ID!): AttemptDate
+  }
 `;
 
 module.exports = {

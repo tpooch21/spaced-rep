@@ -16,6 +16,11 @@ const resolvers = {
       return retrieveUser(args.id);
     },
   },
+  Mutation: {
+    addUser(parent, args) {
+      return createUser(args.firstName, args.lastName);
+    },
+  },
   User: {
     problems(parent, args) {
       return retrieveProblems(parent.id);
