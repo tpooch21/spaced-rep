@@ -13,43 +13,37 @@ import {
 
 // Misc
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { isHttpUri, isHttpsUri } from "valid-url";
 
+// GraphQL
+import { useMutation } from "@apollo/client";
+import { ADD_PROBLEM } from "../../queries/problem";
 /**
  * Name
  * URL
  * Number (optional)
  * Difficulty (optional)
  */
-const url = "http://localhost:3001/problems";
 
 const AddProblemForm = ({ add }) => {
+  const [addProblem, { data }] = useMutation(ADD_PROBLEM);
+
   const toast = useToast();
   const { handleSubmit, register, errors, reset } = useForm();
   const onSubmit = (data) => {
-    const { problemName, problemURL, problemId, difficulty } = data;
+    const { name, url, leetcodeId, difficulty } = data;
+    const userId = 1;
 
-    axios
-      .post(url, {
-        name: problemName,
-        url: problemURL,
-        id: problemId,
-        difficulty: difficulty,
-      })
-      .then((res) => {
-        console.log(res.data);
-        add(res.data);
-        toast({
-          title: "Success",
-          description: "Problem added successfully",
-          status: "success",
-          duration: 4000,
-          isClosable: true,
-          bg: "green.200",
-        });
-      })
-      .catch((err) => console.error(err));
+    addProblem({ variables: { name, url, leetcodeId, difficulty, userId } });
+
+    toast({
+      title: "Success",
+      description: "Problem added successfully",
+      status: "success",
+      duration: 4000,
+      isClosable: true,
+      bg: "green.200",
+    });
 
     reset();
   };
@@ -75,9 +69,9 @@ const AddProblemForm = ({ add }) => {
         direction="column"
         align="center"
       >
-        <FormControl isInvalid={errors.problemName}>
+        <FormControl isInvalid={errors.name}>
           <Input
-            name="problemName"
+            name="name"
             placeholder="*Name"
             size="sm"
             bg="gray.600"
@@ -86,12 +80,12 @@ const AddProblemForm = ({ add }) => {
             data-testid="name"
           />
           <FormErrorMessage fontSize="xs" mt={1} data-testid="name-msg">
-            {errors.problemName && errors.problemName.message}
+            {errors.name && errors.name.message}
           </FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.problemURL}>
+        <FormControl isInvalid={errors.url}>
           <Input
-            name="problemURL"
+            name="url"
             placeholder="*URL"
             size="sm"
             mt={3}
@@ -105,13 +99,13 @@ const AddProblemForm = ({ add }) => {
             data-testid="url"
           />
           <FormErrorMessage fontSize="xs" mt={1} data-testid="url-msg">
-            {errors.problemURL && errors.problemURL.message}
+            {errors.url && errors.url.message}
           </FormErrorMessage>
         </FormControl>
         <Flex mt={3} spacing={3} align="center" justify="space-between" w={72}>
           <FormControl>
             <Input
-              name="problemId"
+              name="leetcodeId"
               placeholder="ID"
               size="sm"
               bg="gray.600"
@@ -171,7 +165,7 @@ const AddProblemForm = ({ add }) => {
         h={7}
         mt={0}
         borderRadius="sm"
-        bg={errors.problemName || errors.problemURL ? "red.300" : "green.200"}
+        bg={errors.name || errors.url ? "red.300" : "green.200"}
       ></Box>
     </form>
   );
