@@ -18,3 +18,13 @@ export const GET_USER_INFO = gql`
     }
   }
 `;
+
+export const ADD_USER = gql`
+  mutation($firstName: String!, $lastName: String!) {
+    addUser(firstName: $firstName, lastName: $lastName) {
+      id
+      firstName
+      lastName
+    }
+  }
+`;
