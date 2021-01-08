@@ -13,21 +13,21 @@ const icons = {
   ),
 };
 
-const DateItem = ({ date, status }) => (
+const DateItem = ({ date, solved }) => (
   <Flex direction="column" align="center" h={16} ml={2}>
     <Box
       flex="5"
       w={28}
       borderWidth="1px"
       borderRadius="sm"
-      borderColor={dateColors[status]}
+      borderColor={dateColors[solved]}
       px={1}
       d="flex"
       align="flex-start"
     >
       <Text
         flex="4"
-        color={dateColors[status]}
+        color={dateColors[solved]}
         fontFamily="main"
         fontSize="sm"
         align="left"
@@ -35,10 +35,10 @@ const DateItem = ({ date, status }) => (
       >
         {date}
       </Text>
-      {icons[status]}
+      {icons[solved]}
     </Box>
     <Spacer />
-    <Box flex="2" bg={dateColors[status]} w={28} borderRadius="sm"></Box>
+    <Box flex="2" bg={dateColors[solved]} w={28} borderRadius="sm"></Box>
   </Flex>
 );
 

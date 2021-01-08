@@ -9,13 +9,13 @@ import myTheme from "./customTheme/themeExtension";
 
 // apollo
 import { ApolloProvider } from "@apollo/client";
-import apolloCli from "./apolloConfig";
+import client from "./apolloConfig";
 
 const theme = extendTheme(myTheme);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={apolloCli}>
+    <ApolloProvider client={client}>
       <ChakraProvider theme={theme}>
         <App />
       </ChakraProvider>

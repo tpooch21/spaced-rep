@@ -13,27 +13,24 @@ import AddProblem from "../../components/AddProblem/AddProblem";
 // Styling
 import { Box } from "@chakra-ui/react";
 
-// Misc
-import axios from "axios";
+// GraphQL
+import { useQuery, gql } from "@apollo/client";
+import { GET_USER_INFO } from "../../queries";
 
-const url = "http://localhost:3001";
+const ProblemsContainer = ({ userId }) => {
+  const { loading, error, data } = useQuery(GET_USER_INFO, {
+    variables: { userId },
+  });
 
-const ProblemsContainer = () => {
-  const [problems, setProblems] = useState([]);
+  if (loading) return <p>Loading...</p>;
+  console.log(data.user.problems);
 
-  useEffect(() => {
-    axios.get(url).then((res) => setProblems(res.data));
-  }, []);
+  const handleProblemSubmit = (data) => {};
 
-  const handleProblemSubmit = (data) => {
-    setProblems(data);
-  };
-
-  console.log(problems);
   return (
     <Box mt={16} p={5}>
-      {problems.map((problem) => (
-        <ProblemGroup key={problem.id} problem={problem} />
+      {data.user.problems.map((problem) => (
+        <ProblemGroup key={problem.leetcodeId} problem={problem} />
       ))}
       <AddProblem add={handleProblemSubmit} />
     </Box>

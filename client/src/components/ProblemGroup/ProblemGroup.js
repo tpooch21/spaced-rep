@@ -6,13 +6,18 @@ import DateItem from "./DateItem";
 import { Flex } from "@chakra-ui/react";
 
 const ProblemGroup = ({ problem }) => {
-  const { name, dates, difficulty, url, id } = problem;
+  const { name, attemptDates, difficulty, url, leetcodeId } = problem;
 
   return (
     <Flex h={16} spacing={6} mb={5} align="flex-start">
-      <ProblemInfo name={name} difficulty={difficulty} url={url} id={id} />
-      {dates.map(([date, status]) => (
-        <DateItem key={date} date={date} status={status} />
+      <ProblemInfo
+        name={name}
+        difficulty={difficulty}
+        url={url}
+        id={leetcodeId}
+      />
+      {attemptDates.map(({ dateFormatted, solved }) => (
+        <DateItem key={dateFormatted} date={dateFormatted} solved={solved} />
       ))}
     </Flex>
   );
