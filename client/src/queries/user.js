@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_USER_INFO = gql`
-  query($userId: Int!) {
+  query($userId: ID!) {
     user(id: $userId) {
       firstName
       problems {

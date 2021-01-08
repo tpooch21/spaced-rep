@@ -10,7 +10,7 @@ function App() {
     <Box minH="100vh" bg="gray.600" p={5}>
       <Toolbar />
       <main>
-        <ProblemsContainer userId={1} />
+        <ProblemsContainer userId="1" />
       </main>
     </Box>
   );

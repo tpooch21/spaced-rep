@@ -1,11 +1,3 @@
-/**
- * Problems container fetches problems from backend
- * Passes problems as props to Problem groups
- */
-
-// React
-import { useEffect, useState } from "react";
-
 // Components
 import ProblemGroup from "../../components/ProblemGroup/ProblemGroup";
 import AddProblem from "../../components/AddProblem/AddProblem";
@@ -14,7 +6,7 @@ import AddProblem from "../../components/AddProblem/AddProblem";
 import { Box } from "@chakra-ui/react";
 
 // GraphQL
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { GET_USER_INFO } from "../../queries";
 
 const ProblemsContainer = ({ userId }) => {
@@ -23,7 +15,7 @@ const ProblemsContainer = ({ userId }) => {
   });
 
   if (loading) return <p>Loading...</p>;
-  console.log(data.user.problems);
+  if (error) return <p>ERROR</p>;
 
   const handleProblemSubmit = (data) => {};
 
