@@ -5,10 +5,10 @@
 
 const User = require("../models").User;
 
-const createUser = (req, res) => {
+const createUser = (firstName, lastName) => {
   return User.create({
-    firstName: "Trevor",
-    lastName: "Puccini",
+    firstName,
+    lastName,
   })
     .then((res) => console.log(res))
     .catch((err) => console.error(err));

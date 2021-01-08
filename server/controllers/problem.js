@@ -1,12 +1,12 @@
 const Problem = require("../models").Problem;
 
-const createProblem = (req, res) => {
+const createProblem = (name, url, difficulty, leetcodeId, userId) => {
   return Problem.create({
-    name: "Two Sum",
-    url: "this",
-    difficulty: "Easy",
-    leetcodeId: 1,
-    userId: 1,
+    name,
+    url,
+    difficulty,
+    leetcodeId,
+    userId,
   })
     .then((res) => console.log(res))
     .catch((err) => console.error(err));
