@@ -1,12 +1,14 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
+  scalar Date
+
   type AttemptDate {
     id: ID
     dateFormatted: String!
     solved: Boolean!
     problemId: ID!
-    createdAt: String
+    createdAt: Date
   }
 
   type Problem {
