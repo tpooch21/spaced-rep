@@ -24,14 +24,16 @@ const resolvers = {
       return createUser(args.firstName, args.lastName);
     },
     // add problem, then add first date
-    addProblem(parent, args) {
-      createProblem(
+    async addProblem(parent, args) {
+      const problem = await createProblem(
         args.name,
         args.url,
         args.difficulty,
         args.leetcodeId,
         args.userId
-      ).then(({ id }) => createAttemptDate(id));
+      );
+      await createAttemptDate(problem.id);
+      return problem;
     },
   },
   User: {

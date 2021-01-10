@@ -8,7 +8,7 @@ const createAttemptDate = (problemId) => {
     solved: false,
     problemId: problemId,
   })
-    .then((res) => console.log(res))
+    .then((res) => res)
     .catch((err) => console.error(err));
 };
 
