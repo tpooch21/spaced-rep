@@ -16,8 +16,8 @@ import { useForm } from "react-hook-form";
 import { isHttpUri, isHttpsUri } from "valid-url";
 
 // GraphQL
-import { useMutation } from "@apollo/client";
-import { ADD_PROBLEM } from "../../queries/problem";
+import { useMutation, gql } from "@apollo/client";
+import { ADD_PROBLEM, GET_PROBLEMS } from "../../queries/problem";
 /**
  * Name
  * URL
@@ -25,8 +25,33 @@ import { ADD_PROBLEM } from "../../queries/problem";
  * Difficulty (optional)
  */
 
+// CURRENT USER SHOULD BE KNOWN BY THIS FORM
+
 const AddProblemForm = ({ add }) => {
-  const [addProblem, { data }] = useMutation(ADD_PROBLEM);
+  const [addProblem, { data }] = useMutation(ADD_PROBLEM, {
+    update(cache, { data: { addProblem } }) {
+      debugger;
+      cache.modify({
+        fields: {
+          problems(existingProblems = []) {
+            const newProblemRef = cache.writeFragment({
+              data: addProblem,
+              fragment: gql`
+                fragment NewProblem on Problem {
+                  id
+                  name
+                  url
+                  difficulty
+                  leetcodeId
+                }
+              `,
+            });
+            return [...existingProblems, newProblemRef];
+          },
+        },
+      });
+    },
+  });
 
   const toast = useToast();
   const { handleSubmit, register, errors, reset } = useForm();
