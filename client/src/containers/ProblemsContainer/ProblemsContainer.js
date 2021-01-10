@@ -8,9 +8,10 @@ import { Box } from "@chakra-ui/react";
 // GraphQL
 import { useQuery } from "@apollo/client";
 import { GET_USER_INFO } from "../../queries/user";
+import { GET_PROBLEMS } from "../../queries/problem";
 
 const ProblemsContainer = ({ userId }) => {
-  const { loading, error, data } = useQuery(GET_USER_INFO, {
+  const { loading, error, data } = useQuery(GET_PROBLEMS, {
     variables: { userId },
   });
 
@@ -21,7 +22,7 @@ const ProblemsContainer = ({ userId }) => {
 
   return (
     <Box mt={16} p={5}>
-      {data.user.problems.map((problem) => (
+      {data.problems.map((problem) => (
         <ProblemGroup key={problem.leetcodeId} problem={problem} />
       ))}
       <AddProblem add={handleProblemSubmit} />

@@ -1,5 +1,21 @@
 import { gql } from "@apollo/client";
 
+export const GET_PROBLEMS = gql`
+  query($userId: ID!) {
+    problems(userId: $userId) {
+      name
+      url
+      difficulty
+      leetcodeId
+      attemptDates {
+        dateFormatted
+        solved
+        createdAt
+      }
+    }
+  }
+`;
+
 export const ADD_PROBLEM = gql`
   mutation(
     $name: String!
