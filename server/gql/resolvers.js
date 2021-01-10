@@ -23,14 +23,15 @@ const resolvers = {
     addUser(parent, args) {
       return createUser(args.firstName, args.lastName);
     },
+    // add problem, then add first date
     addProblem(parent, args) {
-      return createProblem(
+      createProblem(
         args.name,
         args.url,
         args.difficulty,
         args.leetcodeId,
         args.userId
-      );
+      ).then(({ id }) => createAttemptDate(id));
     },
   },
   User: {

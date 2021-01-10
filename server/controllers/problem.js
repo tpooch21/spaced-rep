@@ -8,7 +8,7 @@ const createProblem = (name, url, difficulty, leetcodeId, userId) => {
     leetcodeId,
     userId,
   })
-    .then((res) => res)
+    .then((res) => res.get({ plain: true }))
     .catch((err) => console.error(err));
 };
 
