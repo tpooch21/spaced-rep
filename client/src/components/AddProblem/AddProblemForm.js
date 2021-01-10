@@ -43,6 +43,11 @@ const AddProblemForm = ({ add }) => {
                   url
                   difficulty
                   leetcodeId
+                  attemptDates {
+                    dateFormatted
+                    solved
+                    createdAt
+                  }
                 }
               `,
             });
