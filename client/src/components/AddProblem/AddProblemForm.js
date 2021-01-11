@@ -28,7 +28,7 @@ import { ADD_PROBLEM, GET_PROBLEMS } from "../../queries/problem";
 // CURRENT USER SHOULD BE KNOWN BY THIS FORM
 
 const AddProblemForm = ({ add }) => {
-  const [addProblem, { data }] = useMutation(ADD_PROBLEM, {
+  const [addProblem, { data, error, loading }] = useMutation(ADD_PROBLEM, {
     update(cache, { data: { addProblem } }) {
       debugger;
       cache.modify({
@@ -57,23 +57,33 @@ const AddProblemForm = ({ add }) => {
       });
     },
   });
-
   const toast = useToast();
   const { handleSubmit, register, errors, reset } = useForm();
+
   const onSubmit = (data) => {
     const { name, url, leetcodeId, difficulty } = data;
     const userId = 1;
 
-    addProblem({ variables: { name, url, leetcodeId, difficulty, userId } });
-
-    toast({
-      title: "Success",
-      description: "Problem added successfully",
-      status: "success",
-      duration: 4000,
-      isClosable: true,
-      bg: "green.200",
-    });
+    addProblem({ variables: { name, url, leetcodeId, difficulty, userId } })
+      .then((res) => {
+        toast({
+          title: "Success",
+          description: "Problem added successfully",
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+          bg: "green.200",
+        });
+      })
+      .catch((err) => {
+        toast({
+          title: "Error",
+          description: "Failed to add problem",
+          status: "error",
+          duration: 4000,
+          isClosable: true,
+        });
+      });
 
     reset();
   };
@@ -85,6 +95,7 @@ const AddProblemForm = ({ add }) => {
     return "URL is invalid";
   };
 
+  if (loading) return <p>Loading...</p>;
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex

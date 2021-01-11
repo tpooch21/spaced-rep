@@ -7,7 +7,6 @@ import { Box } from "@chakra-ui/react";
 
 // GraphQL
 import { useQuery } from "@apollo/client";
-import { GET_USER_INFO } from "../../queries/user";
 import { GET_PROBLEMS } from "../../queries/problem";
 
 const ProblemsContainer = ({ userId }) => {
