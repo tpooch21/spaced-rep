@@ -25,15 +25,20 @@ const resolvers = {
     },
     // add problem, then add first date
     async addProblem(parent, args) {
-      const problem = await createProblem(
+      return createProblem(
         args.name,
         args.url,
         args.difficulty,
         args.leetcodeId,
         args.userId
-      );
-      await createAttemptDate(problem.id);
-      return problem;
+      )
+        .then(async (res) => {
+          await createAttemptDate(res.id);
+          return res;
+        })
+        .catch((err) => {
+          throw new Error("Could not add problem to database");
+        });
     },
   },
   User: {

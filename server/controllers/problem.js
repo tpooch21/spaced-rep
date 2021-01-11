@@ -9,7 +9,9 @@ const createProblem = (name, url, difficulty, leetcodeId, userId) => {
     userId,
   })
     .then((res) => res.get({ plain: true }))
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      throw new Error(err.message);
+    });
 };
 
 const retrieveProblems = (userId) => {
