@@ -34,16 +34,14 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone https://github.com/tpooch21/spaced-rep.git
    ```
-2. Install NPM packages
+2. cd into server folder, install NPM packages and run server
    ```sh
    npm install
-   ```
-3. cd into server folder and run
-   ```sh
    npm start
    ```
-4. cd into client folder and run
+3. cd into client folder, install NPM packages and run cra server
    ```sh
+   npm install
    npm start
    ```
 
