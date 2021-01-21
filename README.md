@@ -5,7 +5,7 @@
 
 In the tech world, the interview process expands far beyond evaluating culture fit. In almost every case, you'll have to prove that you're technically capable of performing on the job. 
 Whether it's an accurate assessment of your engineering skill set or not, you're almost guaranteed to come across a Leetcode-style interview at some point in your job hunt. Thus, it's important to make sure
-you have an effective study plan for mastering these problems. Enter spaced repetition; to quote Wikipedia, spaced repetition is "method where the subject is asked to remember a certain fact with the time intervals increasing each time the fact is presented or said."
+you have an effective study plan for mastering these problems. Enter spaced repetition; to quote Wikipedia, spaced repetition is a "method where the subject is asked to remember a certain fact with the time intervals increasing each time the fact is presented or said."
 As with any difficult concept, repetition is an effective way of ensuring that once-familiar approaches won't become stale in your mind. You have to exercise the brain, just as you would your other muscles (hopefully). Use this tracker
 to enter leetcode problems, track whether you were successful in your last attempt, and be notified automatically when it's time to train them again. 
 
