@@ -11,10 +11,10 @@ to enter leetcode problems, track whether you were successful in your last attem
 
 ### Built With
 
-* [](React)
-* [](Apollo/GraphQL)
-* [](Node/Express)
-* [](MySQL)
+* []() React
+* []() Apollo/GraphQL
+* []() Node/Express
+* []() MySQL
 
 <!-- GETTING STARTED -->
 ## Getting Started
