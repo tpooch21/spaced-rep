@@ -4,6 +4,7 @@ const { retrieveProblems, createProblem } = require("../controllers").problem;
 const {
   retrieveAttemptDates,
   createAttemptDate,
+  createPendingAttemptDate,
 } = require("../controllers").attemptDate;
 
 // custom scalars
@@ -33,7 +34,8 @@ const resolvers = {
         args.userId
       )
         .then(async (res) => {
-          await createAttemptDate(res.id);
+          await createAttemptDate(res.id, args.status);
+          await createPendingAttemptDate(res.id, args.status);
           return res;
         })
         .catch((err) => {

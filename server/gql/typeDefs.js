@@ -41,6 +41,7 @@ const typeDefs = gql`
       difficulty: String
       leetcodeId: ID
       userId: ID!
+      status: String!
     ): Problem
     addAttemptDate(problemId: ID!): AttemptDate
   }
