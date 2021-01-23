@@ -6,7 +6,7 @@ const typeDefs = gql`
   type AttemptDate {
     id: ID
     dateFormatted: String!
-    solved: Boolean!
+    status: String!
     problemId: ID!
     createdAt: Date
   }
@@ -43,7 +43,11 @@ const typeDefs = gql`
       userId: ID!
       status: String!
     ): Problem
-    addAttemptDate(problemId: ID!): AttemptDate
+    registerProblemAttempt(
+      problemId: ID!
+      status: String!
+      id: ID!
+    ): AttemptDate
   }
 `;
 

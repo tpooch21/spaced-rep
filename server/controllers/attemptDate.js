@@ -49,8 +49,26 @@ const retrieveAttemptDates = (problemId) => {
     .catch((err) => console.error(err));
 };
 
+const updateAttemptDate = (id, status) => {
+  return AttemptDate.update(
+    { status },
+    {
+      where: {
+        id,
+      },
+    }
+  )
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => {
+      throw new Error(err.message);
+    });
+};
+
 module.exports = {
   createAttemptDate,
   retrieveAttemptDates,
   createPendingAttemptDate,
+  updateAttemptDate,
 };

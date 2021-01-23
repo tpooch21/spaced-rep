@@ -5,6 +5,7 @@ const {
   retrieveAttemptDates,
   createAttemptDate,
   createPendingAttemptDate,
+  updateAttemptDate,
 } = require("../controllers").attemptDate;
 
 // custom scalars
@@ -40,6 +41,16 @@ const resolvers = {
         })
         .catch((err) => {
           throw new Error("Could not add problem to database");
+        });
+    },
+    registerProblemAttempt(parent, args) {
+      return updateAttemptDate(args.id, args.status)
+        .then((_) => createPendingAttemptDate(args.problemId, args.status))
+        .then((res) => {
+          return res;
+        })
+        .catch((err) => {
+          throw new Error("Failed to register new problem attempt");
         });
     },
   },
