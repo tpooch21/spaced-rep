@@ -11,8 +11,8 @@ module.exports = {
       dateFormatted: {
         type: Sequelize.STRING,
       },
-      solved: {
-        type: Sequelize.BOOLEAN,
+      status: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

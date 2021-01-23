@@ -1,11 +1,11 @@
 const AttemptDate = require("../models").AttemptDate;
 const dateFormat = require("dateformat");
 
-const createAttemptDate = (problemId) => {
+const createAttemptDate = (problemId, status) => {
   const now = new Date();
   return AttemptDate.create({
     dateFormatted: dateFormat(now, "shortDate"),
-    solved: false,
+    status: status,
     problemId: problemId,
   })
     .then((res) => res)

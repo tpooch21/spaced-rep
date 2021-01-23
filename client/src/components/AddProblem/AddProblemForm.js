@@ -84,7 +84,6 @@ const AddProblemForm = ({ add }) => {
           isClosable: true,
         });
       });
-
     reset();
   };
 

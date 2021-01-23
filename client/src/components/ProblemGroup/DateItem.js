@@ -1,6 +1,7 @@
 import { Flex, Spacer, Box, Text } from "@chakra-ui/react";
 import { SmallCloseIcon, CheckCircleIcon } from "@chakra-ui/icons";
 
+// add status for pending and due here too
 const dateColors = {
   true: "green.200",
   false: "red.300",

@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   AttemptDate.init(
     {
       dateFormatted: DataTypes.STRING,
-      solved: DataTypes.BOOLEAN,
+      status: DataTypes.STRING,
     },
     {
       sequelize,

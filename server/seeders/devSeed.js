@@ -28,9 +28,11 @@ const testProblems = [
 const testDates = [
   {
     problemId: 1,
+    status: "success",
   },
   {
     problemId: 2,
+    status: "failure",
   },
 ];
 
@@ -38,4 +40,6 @@ testUsers.forEach(({ firstName, lastName }) => createUser(firstName, lastName));
 testProblems.forEach(({ name, url, difficulty, leetcodeId, userId }) =>
   createProblem(name, url, difficulty, leetcodeId, userId)
 );
-testDates.forEach(({ problemId }) => createAttemptDate(problemId));
+testDates.forEach(({ problemId, status }) =>
+  createAttemptDate(problemId, status)
+);
