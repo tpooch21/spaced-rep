@@ -16,8 +16,8 @@ const ProblemGroup = ({ problem }) => {
         url={url}
         id={leetcodeId}
       />
-      {attemptDates.map(({ dateFormatted, solved }) => (
-        <DateItem key={dateFormatted} date={dateFormatted} solved={solved} />
+      {attemptDates.map(({ dateFormatted, status }) => (
+        <DateItem key={dateFormatted} date={dateFormatted} status={status} />
       ))}
     </Flex>
   );

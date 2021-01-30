@@ -9,7 +9,7 @@ export const GET_PROBLEMS = gql`
       leetcodeId
       attemptDates {
         dateFormatted
-        solved
+        status
         createdAt
       }
     }
