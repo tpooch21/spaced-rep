@@ -22,6 +22,7 @@ export const ADD_PROBLEM = gql`
     $url: String!
     $difficulty: String
     $leetcodeId: ID
+    $status: String!
     $userId: ID!
   ) {
     addProblem(
@@ -29,6 +30,7 @@ export const ADD_PROBLEM = gql`
       url: $url
       difficulty: $difficulty
       leetcodeId: $leetcodeId
+      status: $status
       userId: $userId
     ) {
       id

@@ -40,8 +40,8 @@ const typeDefs = gql`
       url: String!
       difficulty: String
       leetcodeId: ID
-      userId: ID!
       status: String!
+      userId: ID!
     ): Problem
     registerProblemAttempt(
       problemId: ID!
