@@ -46,7 +46,7 @@ To get a local copy up and running follow these simple steps.
    ```
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Demo
 
 ![](Spaced-Rep-Demo.gif)
 
