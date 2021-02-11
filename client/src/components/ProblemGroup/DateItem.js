@@ -1,11 +1,17 @@
 import { Flex, Spacer, Box, Text } from "@chakra-ui/react";
-import { SmallCloseIcon, CheckCircleIcon } from "@chakra-ui/icons";
+import {
+  SmallCloseIcon,
+  CheckCircleIcon,
+  TimeIcon,
+  WarningIcon,
+} from "@chakra-ui/icons";
 
 // add status for pending and due here too
 const dateColors = {
   success: "green.200",
   failure: "red.300",
   pending: "orange.300",
+  due: "teal.200",
 };
 
 const icons = {
@@ -13,7 +19,10 @@ const icons = {
   failure: (
     <SmallCloseIcon bg="red.300" borderRadius="lg" mt={1} color="gray.600" />
   ),
-  pending: null,
+  pending: (
+    <TimeIcon bg="orange.300" borderRadius="lg" mt={1} color="gray.600" />
+  ),
+  due: <WarningIcon bg="teal.200" borderRadius="lg" mt={1} color="gray.600" />,
 };
 
 const DateItem = ({ date, status }) => (

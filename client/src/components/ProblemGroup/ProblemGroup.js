@@ -5,7 +5,9 @@ import DateItem from "./DateItem";
 // Styles
 import { Flex } from "@chakra-ui/react";
 
-const ProblemGroup = ({ problem }) => {
+import { isDue } from "../../utils";
+
+const ProblemGroup = ({ problem, date }) => {
   const { name, attemptDates, difficulty, url, leetcodeId } = problem;
 
   return (
@@ -16,9 +18,18 @@ const ProblemGroup = ({ problem }) => {
         url={url}
         id={leetcodeId}
       />
-      {attemptDates.map(({ dateFormatted, status }) => (
-        <DateItem key={dateFormatted} date={dateFormatted} status={status} />
-      ))}
+      {attemptDates.map(({ dateFormatted, status, createdAt }) => {
+        const createdDate = new Date(createdAt);
+        const due = isDue(date, createdDate);
+        return (
+          <DateItem
+            key={dateFormatted}
+            date={dateFormatted}
+            status={due ? "due" : status}
+            created={createdAt}
+          />
+        );
+      })}
     </Flex>
   );
 };
