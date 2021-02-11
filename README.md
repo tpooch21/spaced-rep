@@ -48,7 +48,7 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![](demo.gif)
+![](Spaced-Rep-Demo.gif)
 
 <!-- CONTRIBUTING -->
 ## Contributing
