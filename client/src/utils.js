@@ -3,5 +3,5 @@ export const isDue = (first, second) => {
   var one = new Date(first.getFullYear(), first.getMonth(), first.getDate());
   var two = new Date(second.getFullYear(), second.getMonth(), second.getDate());
 
-  return one - two;
+  return one > two;
 };

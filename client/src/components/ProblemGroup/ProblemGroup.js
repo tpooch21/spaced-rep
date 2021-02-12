@@ -21,11 +21,13 @@ const ProblemGroup = ({ problem, date }) => {
       {attemptDates.map(({ dateFormatted, status, createdAt }) => {
         const createdDate = new Date(createdAt);
         const due = isDue(date, createdDate);
+        /* Status must be pending to be changed to due ("success" and "failure" statuses mean that attempt has already been completed) */
+        const displayStatus = due && status === "pending" ? "due" : status;
         return (
           <DateItem
             key={dateFormatted}
             date={dateFormatted}
-            status={due ? "due" : status}
+            status={displayStatus}
             created={createdAt}
           />
         );
