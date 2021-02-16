@@ -3,7 +3,8 @@ import ProblemInfo from "./ProblemInfo";
 import DateItem from "./DateItem";
 
 // Styles
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box, IconButton } from "@chakra-ui/react";
+import { SmallCloseIcon, CheckCircleIcon } from "@chakra-ui/icons";
 
 import { isDue } from "../../utils";
 
@@ -11,7 +12,7 @@ const ProblemGroup = ({ problem, date }) => {
   const { name, attemptDates, difficulty, url, leetcodeId } = problem;
 
   return (
-    <Flex h={16} spacing={6} mb={5} align="flex-start">
+    <Flex h={16} mb={5} align="flex-start">
       <ProblemInfo
         name={name}
         difficulty={difficulty}

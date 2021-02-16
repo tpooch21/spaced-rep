@@ -20,10 +20,10 @@ const icons = {
   Failure: (
     <SmallCloseIcon bg="red.300" borderRadius="lg" mt={1} color="gray.600" />
   ),
-  Pending: (
-    <TimeIcon bg="orange.300" borderRadius="lg" mt={1} color="gray.600" />
+  Pending: <TimeIcon bg="teal.200" borderRadius="lg" mt={1} color="gray.600" />,
+  Due: (
+    <WarningIcon bg="gray.600" borderRadius="lg" mt={1} color="orange.300" />
   ),
-  Due: <WarningIcon bg="gray.600" borderRadius="lg" mt={1} color="teal.200" />,
 };
 
 const ProblemsContainer = ({ userId }) => {
