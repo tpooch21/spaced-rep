@@ -22,7 +22,7 @@ const icons = {
   pending: (
     <TimeIcon bg="orange.300" borderRadius="lg" mt={1} color="gray.600" />
   ),
-  due: <WarningIcon bg="teal.200" borderRadius="lg" mt={1} color="gray.600" />,
+  due: <WarningIcon bg="gray.600" borderRadius="lg" mt={1} color="teal.200" />,
 };
 
 const DateItem = ({ date, status }) => (

@@ -3,13 +3,28 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import dateformat from "dateformat";
 
-// Components
+// Components + Styling
 import ProblemGroup from "../../components/ProblemGroup/ProblemGroup";
 import AddProblem from "../../components/AddProblem/AddProblem";
 import { GET_PROBLEMS } from "../../queries/problem";
+import { Box, Text } from "@chakra-ui/react";
+import {
+  SmallCloseIcon,
+  CheckCircleIcon,
+  TimeIcon,
+  WarningIcon,
+} from "@chakra-ui/icons";
 
-// Styling
-import { Box } from "@chakra-ui/react";
+const icons = {
+  Success: <CheckCircleIcon color="green.200" mt={1} />,
+  Failure: (
+    <SmallCloseIcon bg="red.300" borderRadius="lg" mt={1} color="gray.600" />
+  ),
+  Pending: (
+    <TimeIcon bg="orange.300" borderRadius="lg" mt={1} color="gray.600" />
+  ),
+  Due: <WarningIcon bg="gray.600" borderRadius="lg" mt={1} color="teal.200" />,
+};
 
 const ProblemsContainer = ({ userId }) => {
   const { loading, error, data } = useQuery(GET_PROBLEMS, {
@@ -35,6 +50,16 @@ const ProblemsContainer = ({ userId }) => {
 
   return (
     <Box mt={16} p={5}>
+      <div style={{ display: "flex", marginBottom: "20px" }}>
+        {Object.keys(icons).map((status) => (
+          <div style={{ display: "flex", margin: "0 5px" }}>
+            {icons[status]}
+            <Text color="gray.200" ml={1}>
+              {status}
+            </Text>
+          </div>
+        ))}
+      </div>
       {data.problems.map((problem) => (
         <ProblemGroup key={problem.leetcodeId} problem={problem} date={date} />
       ))}
